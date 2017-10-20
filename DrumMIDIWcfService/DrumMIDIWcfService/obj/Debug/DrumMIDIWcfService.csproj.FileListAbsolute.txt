@@ -1,0 +1,6 @@
+C:\Users\alexa\source\repos\DrumMIDIWcfService\DrumMIDIWcfService\bin\DrumMIDIWcfService.dll.config
+C:\Users\alexa\source\repos\DrumMIDIWcfService\DrumMIDIWcfService\bin\DrumMIDIWcfService.dll
+C:\Users\alexa\source\repos\DrumMIDIWcfService\DrumMIDIWcfService\bin\DrumMIDIWcfService.pdb
+C:\Users\alexa\source\repos\DrumMIDIWcfService\DrumMIDIWcfService\obj\Debug\DrumMIDIWcfService.csproj.CoreCompileInputs.cache
+C:\Users\alexa\source\repos\DrumMIDIWcfService\DrumMIDIWcfService\obj\Debug\DrumMIDIWcfService.dll
+C:\Users\alexa\source\repos\DrumMIDIWcfService\DrumMIDIWcfService\obj\Debug\DrumMIDIWcfService.pdb
