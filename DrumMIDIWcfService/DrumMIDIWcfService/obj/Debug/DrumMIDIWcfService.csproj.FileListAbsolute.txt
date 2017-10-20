@@ -4,3 +4,10 @@ C:\Users\alexa\source\repos\DrumMIDIWcfService\DrumMIDIWcfService\bin\DrumMIDIWc
 C:\Users\alexa\source\repos\DrumMIDIWcfService\DrumMIDIWcfService\obj\Debug\DrumMIDIWcfService.csproj.CoreCompileInputs.cache
 C:\Users\alexa\source\repos\DrumMIDIWcfService\DrumMIDIWcfService\obj\Debug\DrumMIDIWcfService.dll
 C:\Users\alexa\source\repos\DrumMIDIWcfService\DrumMIDIWcfService\obj\Debug\DrumMIDIWcfService.pdb
+C:\Users\alexa\Documents\GitHub\DrumMIDI\DrumMIDIWcfService\DrumMIDIWcfService\bin\DrumMIDIWcfService.dll.config
+C:\Users\alexa\Documents\GitHub\DrumMIDI\DrumMIDIWcfService\DrumMIDIWcfService\bin\DrumMIDIWcfService.dll
+C:\Users\alexa\Documents\GitHub\DrumMIDI\DrumMIDIWcfService\DrumMIDIWcfService\bin\DrumMIDIWcfService.pdb
+C:\Users\alexa\Documents\GitHub\DrumMIDI\DrumMIDIWcfService\DrumMIDIWcfService\obj\Debug\DrumMIDIWcfService.csprojResolveAssemblyReference.cache
+C:\Users\alexa\Documents\GitHub\DrumMIDI\DrumMIDIWcfService\DrumMIDIWcfService\obj\Debug\DrumMIDIWcfService.csproj.CoreCompileInputs.cache
+C:\Users\alexa\Documents\GitHub\DrumMIDI\DrumMIDIWcfService\DrumMIDIWcfService\obj\Debug\DrumMIDIWcfService.dll
+C:\Users\alexa\Documents\GitHub\DrumMIDI\DrumMIDIWcfService\DrumMIDIWcfService\obj\Debug\DrumMIDIWcfService.pdb
