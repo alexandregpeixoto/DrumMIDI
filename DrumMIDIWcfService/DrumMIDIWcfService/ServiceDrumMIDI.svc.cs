@@ -126,5 +126,117 @@ namespace DrumMIDIWcfService
             webServiceDB = null;
             return fResult;
         }
+
+        public List<string> PresetList()
+        {
+            List<String> fResult = new List<string>();
+            DbConnection webServiceDB = new DbConnection();
+            using (SqlConnection newSqlConnection = new SqlConnection(webServiceDB.ConnectionString))
+            {
+                newSqlConnection.Open();
+                using (SqlCommand newCommand = new SqlCommand("SELECT [presetName] FROM tbPreset", newSqlConnection))
+                using (SqlDataReader newReader = newCommand.ExecuteReader())
+                {
+                    try
+                    {
+                        while (newReader.Read())
+                        {
+                            fResult.Add(newReader.GetString(0));
+                        }
+                    }
+
+                    catch
+                    {
+
+                    }
+                }
+            }
+            webServiceDB = null;
+            return fResult;
+        }
+
+        public List<string> PresetSelect(string _PresetName)
+        {
+            List<String> fResult = new List<string>();
+            DbConnection webServiceDB = new DbConnection();
+            using (SqlConnection newSqlConnection = new SqlConnection(webServiceDB.ConnectionString))
+            {
+                newSqlConnection.Open();
+                using (SqlCommand newCommand = new SqlCommand("SELECT [presetName], [idPart1], [idPart2], [idPart3], [idPart4], [idPart5], [idUser] FROM tbPreset WHERE presetName = '" + _PresetName + "'"))
+                using (SqlDataReader newReader = newCommand.ExecuteReader())
+                {
+                    try
+                    {
+                        while (newReader.Read())
+                        {
+                            fResult.Add(newReader.GetString(0));
+                        }
+                    }
+
+                    catch
+                    {
+
+                    }
+                }
+        }
+            webServiceDB = null;
+            return fResult;
+        }
+
+    public bool NoteCreate(Int32 _codeMIDI, string _name)
+        {
+            bool fResult = false;
+            DbConnection webServiceDB = new DbConnection();
+            using (SqlConnection newSqlConnection = new SqlConnection(webServiceDB.ConnectionString))
+            {
+                newSqlConnection.Open();
+                using (SqlCommand newCommand = new SqlCommand("INSERT INTO tbNote([codeMIDI], [name]) VALUES ('" + _codeMIDI + "','" + _name + "')", newSqlConnection))
+                {
+                    try
+                    {
+                        if (newCommand.ExecuteNonQuery() != 0)
+                        {
+                            fResult = true;
+                        }
+                    }
+
+                    //If there's some error, just ignore the command and return false...
+                    catch
+                    {
+
+                    }
+                }
+            }
+            webServiceDB = null;
+            return fResult;
+        }
+
+        public bool DrumPartCreate(Int32 _intensity, Int32 _analogPort, Int32 _idNote)
+        {
+            bool fResult = false;
+            DbConnection webServiceDB = new DbConnection();
+            using (SqlConnection newSqlConnection = new SqlConnection(webServiceDB.ConnectionString))
+            {
+                newSqlConnection.Open();
+                using (SqlCommand newCommand = new SqlCommand("INSERT INTO tbDrumPart([intensity], [analogPort], [idNote]) VALUES ('" + _intensity + "','" + _analogPort + "','" + _idNote + "')", newSqlConnection))
+                {
+                    try
+                    {
+                        if (newCommand.ExecuteNonQuery() != 0)
+                        {
+                            fResult = true;
+                        }
+                    }
+
+                    //If there's some error, just ignore the command and return false...
+                    catch
+                    {
+
+                    }
+                }
+            }
+            webServiceDB = null;
+            return fResult;
+        }
     }
 }
