@@ -178,10 +178,10 @@ namespace DrumMIDIWcfService
                             {
                                 Name = newReader["presetName"].ToString(),
                                 IdDrumPart1 = int.Parse(newReader["idPart1"].ToString()),
-                                IdDrumPart2 = int.Parse(newReader["idPart1"].ToString()),
-                                IdDrumPart3 = int.Parse(newReader["idPart1"].ToString()),
-                                IdDrumPart4 = int.Parse(newReader["idPart1"].ToString()),
-                                IdDrumPart5 = int.Parse(newReader["idPart1"].ToString()),
+                                IdDrumPart2 = int.Parse(newReader["idPart2"].ToString()),
+                                IdDrumPart3 = int.Parse(newReader["idPart3"].ToString()),
+                                IdDrumPart4 = int.Parse(newReader["idPart4"].ToString()),
+                                IdDrumPart5 = int.Parse(newReader["idPart5"].ToString()),
                                 IdUser = int.Parse(newReader["idUser"].ToString()),
                             });
                         }
