@@ -23,7 +23,7 @@ namespace DrumMIDIWcfService
         [OperationContract]
         List<String> PresetList();
 
-        //Create
+        //Insert
 
         [OperationContract]
         Boolean UserCreate(String _UserName, String _Password);
@@ -40,7 +40,7 @@ namespace DrumMIDIWcfService
         //Select
 
         [OperationContract]
-        List<String> PresetSelect(string _PresetName);
+        List<Preset> PresetSelect(string _PresetName);
 
     }
 }

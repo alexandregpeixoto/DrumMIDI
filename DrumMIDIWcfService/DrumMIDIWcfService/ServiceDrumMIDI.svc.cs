@@ -155,9 +155,9 @@ namespace DrumMIDIWcfService
             return fResult;
         }
 
-        public List<string> PresetSelect(string _PresetName)
+        public List<Preset> PresetSelect(string _PresetName)
         {
-            List<String> fResult = new List<string>();
+            List<Preset> selectedPreset = new List<Preset>();
             DbConnection webServiceDB = new DbConnection();
             using (SqlConnection newSqlConnection = new SqlConnection(webServiceDB.ConnectionString))
             {
@@ -167,9 +167,23 @@ namespace DrumMIDIWcfService
                 {
                     try
                     {
+                        if (!newReader.HasRows)
+                        {
+                            return null;
+                        }
+
                         while (newReader.Read())
                         {
-                            fResult.Add(newReader.GetString(0));
+                            selectedPreset.Add(new Preset()
+                            {
+                                Name = newReader["presetName"].ToString(),
+                                IdDrumPart1 = int.Parse(newReader["idPart1"].ToString()),
+                                IdDrumPart2 = int.Parse(newReader["idPart1"].ToString()),
+                                IdDrumPart3 = int.Parse(newReader["idPart1"].ToString()),
+                                IdDrumPart4 = int.Parse(newReader["idPart1"].ToString()),
+                                IdDrumPart5 = int.Parse(newReader["idPart1"].ToString()),
+                                IdUser = int.Parse(newReader["idUser"].ToString()),
+                            });
                         }
                     }
 
@@ -178,12 +192,13 @@ namespace DrumMIDIWcfService
 
                     }
                 }
-        }
+            }
             webServiceDB = null;
-            return fResult;
+            return selectedPreset;
         }
 
-    public bool NoteCreate(Int32 _codeMIDI, string _name)
+
+        public bool NoteCreate(Int32 _codeMIDI, string _name)
         {
             bool fResult = false;
             DbConnection webServiceDB = new DbConnection();

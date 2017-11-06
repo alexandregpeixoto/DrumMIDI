@@ -10,7 +10,7 @@ namespace DrumMIDIWcfService
     public class Preset
     {
         Int32 intId;
-        Int32 strName;
+        string strName;
         Int32 intIdDrumPart1;
         Int32 intIdDrumPart2;
         Int32 intIdDrumPart3;
@@ -29,6 +29,13 @@ namespace DrumMIDIWcfService
         {
             get { return intId; }
             set { intId = value; }
+        }
+
+        [DataMember]
+        public string Name
+        {
+            get { return strName; }
+            set { strName = value; }
         }
 
         [DataMember]
@@ -114,5 +121,7 @@ namespace DrumMIDIWcfService
             get { return objUser; }
             set { objUser = value; }
         }
+
+
     }
 }
