@@ -162,7 +162,7 @@ namespace DrumMIDIWcfService
             using (SqlConnection newSqlConnection = new SqlConnection(webServiceDB.ConnectionString))
             {
                 newSqlConnection.Open();
-                using (SqlCommand newCommand = new SqlCommand("SELECT [presetName], [idPart1], [idPart2], [idPart3], [idPart4], [idPart5], [idUser] FROM tbPreset WHERE presetName = '" + _PresetName + "'"))
+                using (SqlCommand newCommand = new SqlCommand("SELECT [presetName], [idPart1], [idPart2], [idPart3], [idPart4], [idPart5], [idUser] FROM tbPreset WHERE presetName = '" + _PresetName + "'", newSqlConnection))
                 using (SqlDataReader newReader = newCommand.ExecuteReader())
                 {
                     try
