@@ -197,6 +197,45 @@ namespace DrumMIDIWcfService
             return selectedPreset;
         }
 
+        public List<DrumPart> DrumPartSelect(string _idPart)
+        {
+            List<DrumPart> selectedDrumPart = new List<DrumPart>();
+            DbConnection webServiceDB = new DbConnection();
+            using (SqlConnection newSqlConnection = new SqlConnection(webServiceDB.ConnectionString))
+            {
+                newSqlConnection.Open();
+                using (SqlCommand newCommand = new SqlCommand("SELECT [id], [intensity], [analogPort], [idNote] FROM tbDrumPart WHERE id = '" + _idPart + "'", newSqlConnection))
+                using (SqlDataReader newReader = newCommand.ExecuteReader())
+                {
+                    try
+                    {
+                        if (!newReader.HasRows)
+                        {
+                            return null;
+                        }
+
+                        while (newReader.Read())
+                        {
+                            selectedDrumPart.Add(new DrumPart()
+                            {
+                                Id = int.Parse(newReader["id"].ToString()),
+                                Intensity = int.Parse(newReader["intensity"].ToString()),
+                                AnalogPort = int.Parse(newReader["analogPort"].ToString()),
+                                Note = int.Parse(newReader["idNote"]),
+                            });
+                        }
+                    }
+
+                    catch
+                    {
+
+                    }
+                }
+            }
+            webServiceDB = null;
+            return selectedPreset;
+        }
+
 
         public bool NoteCreate(Int32 _codeMIDI, string _name)
         {
