@@ -37,6 +37,13 @@ namespace DrumMIDIWcfService
         }
 
         [DataMember]
+        public Int32 IdNote
+        {
+            get { return intIdNote; }
+            set { intIdNote = value; }
+        }
+
+        [DataMember]
         public Note Note
         {
             get { return objNote; }

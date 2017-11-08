@@ -221,7 +221,7 @@ namespace DrumMIDIWcfService
                                 Id = int.Parse(newReader["id"].ToString()),
                                 Intensity = int.Parse(newReader["intensity"].ToString()),
                                 AnalogPort = int.Parse(newReader["analogPort"].ToString()),
-                                Note = int.Parse(newReader["idNote"]),
+                                IdNote = int.Parse(newReader["idNote"].ToString()),
                             });
                         }
                     }
@@ -233,7 +233,45 @@ namespace DrumMIDIWcfService
                 }
             }
             webServiceDB = null;
-            return selectedPreset;
+            return selectedDrumPart;
+        }
+
+        public List<Note> MIDINoteSelect(string _idNote)
+        {
+            List<Note> selectedMidiNote = new List<Note>();
+            DbConnection webServiceDB = new DbConnection();
+            using (SqlConnection newSqlConnection = new SqlConnection(webServiceDB.ConnectionString))
+            {
+                newSqlConnection.Open();
+                using (SqlCommand newCommand = new SqlCommand("SELECT [id], [codeMIDI], [name] FROM tbNote WHERE id = '" + _idNote + "'", newSqlConnection))
+                using (SqlDataReader newReader = newCommand.ExecuteReader())
+                {
+                    try
+                    {
+                        if (!newReader.HasRows)
+                        {
+                            return null;
+                        }
+
+                        while (newReader.Read())
+                        {
+                            selectedMidiNote.Add(new Note()
+                            {
+                                Id = int.Parse(newReader["id"].ToString()),
+                                CodeMIDI = int.Parse(newReader["codeMIDI"].ToString()),
+                                Name = newReader["name"].ToString(),
+                            });
+                        }
+                    }
+
+                    catch
+                    {
+
+                    }
+                }
+            }
+            webServiceDB = null;
+            return selectedMidiNote;
         }
 
 

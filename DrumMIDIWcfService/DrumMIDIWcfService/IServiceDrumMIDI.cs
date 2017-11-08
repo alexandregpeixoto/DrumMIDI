@@ -42,5 +42,12 @@ namespace DrumMIDIWcfService
         [OperationContract]
         List<Preset> PresetSelect(string _PresetName);
 
+        [OperationContract]
+        List<DrumPart> DrumPartSelect(string _idPart);
+
+        [OperationContract]
+        List<Note> MIDINoteSelect(string _idNote);
+
+
     }
 }
